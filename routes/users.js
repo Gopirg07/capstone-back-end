@@ -43,7 +43,7 @@ router.post("/signUp", async (req, res, next) => {
       });
 
       //send mail
-      const url = `http://localhost:3000/signUpActivation/${token}`;
+      const url = `https://capstone-fitness-logger.netlify.app/signUpActivation/${token}`;
       const name = user.name;
       const email = user.email;
       SendResetEmail(email, url, "Activate Your Account", name);
@@ -100,7 +100,7 @@ router.post("/signIn", async (req, res, next) => {
         });
   
         //send mail
-        const url = `http://localhost:3000/signUpActivation/${token}`;
+        const url = `https://capstone-fitness-logger.netlify.app/signUpActivation/${token}`;
         const name = user.name;
         const email = user.email;
         SendResetEmail(email, url, "Activate Your Account", name); 
@@ -140,7 +140,7 @@ router.post("/forgetPassword", async (req, res) => {
       let token = await createForgetToken({ id: user._id });
 
       //send mail
-      const url = `http://localhost:3000/reset-password/${token}`;
+      const url = `https://capstone-fitness-logger.netlify.app/reset-password/${token}`;
       const name = user.name;
       const email = user.email;
       SendResetEmail(email, url, "Reset Your Password", name);
